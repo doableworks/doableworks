@@ -40,7 +40,7 @@ export default function Home() {
           <p className="font-bold text-2xl mb-6 tracking-wider">+91 99305 52989</p>
           <div className="space-y-1">
             <p className="font-semibold text-lg">
-              <span className="font-medium">CEO:</span> Harsh Mehta
+               Harsh Mehta
             </p>
             <p className="font-medium text-base">Doable Works</p>
           </div>
