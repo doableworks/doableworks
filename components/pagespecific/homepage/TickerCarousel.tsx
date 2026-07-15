@@ -43,21 +43,21 @@ export default function TickerCarousel() {
             item.type === "text" ? (
               <CarouselItem
                 key={i}
-                className="basis-1/6 pl-0 flex items-center justify-center"
+                className="basis-1/2 lg:basis-1/6 pl-0 flex items-center justify-center"
               >
-                <span className="font-inter font-light lowercase tracking-[0.01em] text-xl leading-[3.125rem] text-[#f2d801] whitespace-nowrap">
+                <span className="font-inter font-light lowercase tracking-[0.01em] text-md lg:text-xl leading-[3.125rem] text-[#f2d801] whitespace-nowrap">
                   {item.label}
                 </span>
               </CarouselItem>
             ) : (
               <CarouselItem
                 key={i}
-                className="basis-auto pl-0 flex items-center justify-center py-[0.625rem] px-4"
+                className="basis-auto pl-0 flex items-center justify-center lg:py-[0.625rem] px-4"
               >
                 <img
                   src="/images/icons/Star.svg"
                   alt="star"
-                  className="size-6 shrink-0"
+                  className="size-4 lg:size-6 shrink-0"
                 />
               </CarouselItem>
             )
