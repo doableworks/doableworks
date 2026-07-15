@@ -1,51 +1,51 @@
 import Image from "next/image";
+import Link from "next/link";
+import TickerCarousel from "@/components/pagespecific/homepage/TickerCarousel";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center p-8 font-sans">
-      <div className="text-center max-w-lg mx-auto animate-fade-in">
-        {/* Logo */}
-        <div className="mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          <Image
-            src="/logo.png"
-            alt="Doable Works Logo"
-            width={300}
-            height={300}
-            className="mx-auto object-contain"
-          />
-        </div>
-        
-        {/* Company Name */}
-        <h1 
-          className="text-5xl lg:text-6xl font-black mb-6 tracking-tight animate-fade-in-up"
-          style={{ color: 'rgb(24, 113, 178)', animationDelay: '0.4s' }}
-        >
-          DOABLE WORKS
+<main className="flex min-h-screen flex-col items-center px-16 py-10 bg-[#002E79]">
+  <img src="/images/homepage/bg.png" alt="Background" className="absolute inset-0 w-full h-screen object-cover mix-blend-multiply" />
+  <img src="/images/homepage/hand.png" alt="Background" className="absolute bottom-0 right-1/6 w-auto h-[90vh] object-cover" />
+  <div className="w-full justify-between items-center gap-4 lg:gap-8 z-10 flex flex-col lg:flex-row">
+          <img src="/images/logo.svg" alt="Doable" className="w-auto h-10" />
+          <div className="flex items-center justify-center gap-4">
+                <img src="/images/icons/phone.svg" alt="Doable" className="w-auto h-6" />
+                <Link href="tel:+919930552989" className="text-white text-lg font-inter hover:underline hover:underline-offset-4">
+                  +91 99305 52989
+                </Link>
+      
+                </div>
+  </div>
+    <div className="flex flex-col items-start justify-start w-full h-full mt-[16vh]">
+      <div className="flex flex-col items-start justify-center gap-2">
+        <h1 className="lg:text-[6rem] font-semibold text-white leading-none tracking-none">
+          Everything is <br/> Doable
         </h1>
-        
-        {/* Coming Soon Message */}
-        <h2 
-          className="text-xl lg:text-2xl font-normal mb-12 tracking-wide animate-fade-in-up"
-          style={{ color: 'rgb(24, 113, 178)', animationDelay: '0.6s' }}
-        >
-          Website Coming Soon
+        <h2 className="font-inter font-light text-white text-3xl">
+          Our website is building
         </h2>
-        
-        {/* Contact Information */}
-        <div 
-          className="text-lg space-y-3 animate-fade-in-up"
-          style={{ color: 'rgb(24, 113, 178)', animationDelay: '0.8s' }}
-        >
-          <p className="mb-6 font-medium">For any further queries contact:</p>
-          <p className="font-bold text-2xl mb-6 tracking-wider">+91 99305 52989</p>
-          <div className="space-y-1">
-            <p className="font-semibold text-lg">
-               Harsh Mehta
-            </p>
-            <p className="font-medium text-base">Doable Works</p>
-          </div>
+        <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 mt-10">
+          <button className="bg-[#9AD3FF] font-medium py-2 px-6 rounded-full text-[#002E79] flex items-center justify-center gap-2 lg:w-36">
+            <img src="/images/icons/download.svg" alt="Download" className="w-6 h-6" />
+            Portfolio
+          </button>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-[6px] py-2 px-6 rounded-full text-white text-[15px] whitespace-nowrap lg:w-36"
+            style={{ background: "linear-gradient(102.18deg, #FF65E0 2.98%, #FF3C00 55.65%, #FFAF40 84.20%)" }}
+          >
+            <img src="/images/icons/instagram.svg" alt="Instagram" className="w-6 h-6 shrink-0" />
+            Follow
+          </a>
         </div>
       </div>
-    </div>
+  </div>
+    <div className="absolute bottom-[8vh] left-0 w-full z-10">
+      <TickerCarousel />
+  </div>
+</main>
   );
 }
