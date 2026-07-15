@@ -6,11 +6,11 @@ import TransitionVertical from "@/animations/TransitionVertical";
 
 export default function Home() {
   return (
-<main className="flex min-h-screen flex-col items-center p-6 lg:px-16 lg:py-10 bg-[#002E79]">
-  <img src="/images/homepage/bg.png" alt="Background" className="absolute inset-0 w-full h-screen object-cover mix-blend-multiply z-0" />
+<main className="flex h-dvh lg:min-h-screen flex-col items-center p-6 pb-0 lg:px-16 lg:py-10 bg-[#002E79]">
+  <img src="/images/homepage/bg.png" alt="Background" className="absolute inset-0 w-full h-dvh lg:h-screen object-cover mix-blend-multiply z-0" />
   
-  <TransitionVertical direction="down" duration={1.5} className="absolute top-0 left-0 w-full h-full z-0 ">
-  <img src="/images/homepage/hand.png" alt="Background" className="absolute bottom-0 left-1/2 -translate-x-1/2 sm:right-[12px] sm:-translate-x-0 lg:right-1/6 w-auto h-[60vh] lg:h-[90vh] object-cover" />
+  <TransitionVertical direction="down" duration={1.5} className="absolute bottom-0 overflow-hidden left-0 w-full h-full z-0 ">
+  <img src="/images/homepage/hand.png" alt="Background" className="absolute bottom-0 left-1/2 -translate-x-1/2 sm:right-[12px] sm:-translate-x-0 lg:right-1/6 w-auto h-[55vh] lg:h-[90vh] object-cover" />
   </TransitionVertical>
   <TransitionVertical direction="up" duration={1.5} className="w-full justify-between items-center gap-4 lg:gap-8 z-10 flex flex-row">
           <img src="/images/logo.svg" alt="Doable" className="w-auto h-6 lg:h-10" />
@@ -22,7 +22,7 @@ export default function Home() {
       
                 </div>
   </TransitionVertical>
-    <div className="flex flex-col items-center lg:items-start justify-start w-full h-full mt-[16vh] z-10">
+    <div className="flex flex-col items-center lg:items-start justify-start w-full h-full mt-12 lg:mt-[16vh] z-10">
       <div className="flex flex-col items-center lg:items-start justify-center gap-2">
         <h1 className="hidden lg:block lg:text-[6rem] font-semibold text-white leading-none tracking-none">
           <Fade>
@@ -61,7 +61,7 @@ export default function Home() {
         </div>
       </div>
   </div>
-    <Fade className="absolute bottom-[10vh] lg:bottom-[8vh] left-0 w-full z-10">
+    <Fade className="absolute bottom-[4vh] sm:bottom-[10vh] lg:bottom-[8vh] left-0 w-full z-10">
       <TickerCarousel />
   </Fade>
 </main>
