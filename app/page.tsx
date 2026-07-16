@@ -1,51 +1,67 @@
 import Image from "next/image";
+import Link from "next/link";
+import TickerCarousel from "@/components/pagespecific/homepage/TickerCarousel";
+import PortfolioDialog from "@/components/pagespecific/homepage/PortfolioDialog";
+import Fade from "@/animations/Fade";
+import TransitionVertical from "@/animations/TransitionVertical";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center p-8 font-sans">
-      <div className="text-center max-w-lg mx-auto animate-fade-in">
-        {/* Logo */}
-        <div className="mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          <Image
-            src="/logo.png"
-            alt="Doable Works Logo"
-            width={300}
-            height={300}
-            className="mx-auto object-contain"
-          />
-        </div>
-        
-        {/* Company Name */}
-        <h1 
-          className="text-5xl lg:text-6xl font-black mb-6 tracking-tight animate-fade-in-up"
-          style={{ color: 'rgb(24, 113, 178)', animationDelay: '0.4s' }}
-        >
-          DOABLE WORKS
+<main className="flex h-dvh lg:min-h-screen flex-col items-center p-6 pb-0 lg:px-16 lg:py-10 bg-[#002E79]">
+  <img src="/images/homepage/bg.png" alt="Background" className="absolute inset-0 w-full h-dvh lg:h-screen object-cover mix-blend-multiply z-0" />
+  
+  <TransitionVertical direction="down" duration={1.5} className="absolute bottom-0 overflow-hidden left-0 w-full h-full z-0 ">
+  <img src="/images/homepage/hand.png" alt="Background" className="absolute bottom-0 left-1/2 -translate-x-1/2 sm:right-[12px] sm:-translate-x-0 lg:right-1/6 w-auto h-[55vh] lg:h-[90vh] object-cover" />
+  </TransitionVertical>
+  <TransitionVertical direction="up" duration={1.5} className="w-full justify-between items-center gap-4 lg:gap-8 z-10 flex flex-row">
+          <img src="/images/logo.svg" alt="Doable" className="w-auto h-6 lg:h-10" />
+          <div className="flex items-center justify-center gap-4">
+                <img src="/images/icons/phone.svg" alt="Doable" className="w-auto h-6" />
+                <Link href="tel:+919930552989" className="text-white text-xs lg:text-lg font-inter hover:underline hover:underline-offset-4">
+                  +91 99305 52989
+                </Link>
+      
+                </div>
+  </TransitionVertical>
+    <div className="flex flex-col items-center lg:items-start justify-start w-full h-full mt-12 lg:mt-[16vh] z-10">
+      <div className="flex flex-col items-center lg:items-start justify-center gap-2">
+        <h1 className="hidden lg:block lg:text-[6rem] font-semibold text-white leading-none tracking-none">
+          <Fade>
+          Everything is <br/> Doable
+          </Fade>
         </h1>
-        
-        {/* Coming Soon Message */}
-        <h2 
-          className="text-xl lg:text-2xl font-normal mb-12 tracking-wide animate-fade-in-up"
-          style={{ color: 'rgb(24, 113, 178)', animationDelay: '0.6s' }}
-        >
-          Website Coming Soon
+                <h1 className="lg:hidden block text-3xl lg:text-[6rem] font-semibold text-white leading-none tracking-none">
+          <Fade>
+          Everything is Doable
+          </Fade>
+        </h1>
+        <h2 className="font-inter font-light text-white text-xl lg:text-3xl">
+          <Fade>
+          Our website is building
+          </Fade>
         </h2>
-        
-        {/* Contact Information */}
-        <div 
-          className="text-lg space-y-3 animate-fade-in-up"
-          style={{ color: 'rgb(24, 113, 178)', animationDelay: '0.8s' }}
-        >
-          <p className="mb-6 font-medium">For any further queries contact:</p>
-          <p className="font-bold text-2xl mb-6 tracking-wider">+91 99305 52989</p>
-          <div className="space-y-1">
-            <p className="font-semibold text-lg">
-               Harsh Mehta
-            </p>
-            <p className="font-medium text-base">Doable Works</p>
-          </div>
+        <div className="flex flex-row items-start lg:items-center gap-4 mt-10">
+          <TransitionVertical direction="down" duration={1.5}>
+          <PortfolioDialog />
+          </TransitionVertical>
+          <TransitionVertical direction="down" duration={1.5}>
+          <a
+            href="https://www.instagram.com/doableworks/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center justify-center gap-[6px] py-2 px-6 rounded-full text-white text-[15px] whitespace-nowrap w-36"
+            style={{ background: "linear-gradient(102.18deg, #FF65E0 2.98%, #FF3C00 55.65%, #FFAF40 84.20%)" }}
+          >
+            <img src="/images/icons/instagram.svg" alt="Instagram" className="w-6 h-6 shrink-0 transition-transform duration-200 group-hover:-translate-x-1" />
+            <span className="transition-all duration-200 group-hover:font-bold">Follow</span>
+          </a>
+          </TransitionVertical>
         </div>
       </div>
-    </div>
+  </div>
+    <Fade className="absolute bottom-[4vh] sm:bottom-[10vh] lg:bottom-[8vh] left-0 w-full z-10">
+      <TickerCarousel />
+  </Fade>
+</main>
   );
 }
