@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import TickerCarousel from "@/components/pagespecific/homepage/TickerCarousel";
+import PortfolioDialog from "@/components/pagespecific/homepage/PortfolioDialog";
 import Fade from "@/animations/Fade";
 import TransitionVertical from "@/animations/TransitionVertical";
 
@@ -41,10 +42,7 @@ export default function Home() {
         </h2>
         <div className="flex flex-row items-start lg:items-center gap-4 mt-10">
           <TransitionVertical direction="down" duration={1.5}>
-          <a href="/DoableWorksCredDeck.pptx" download rel="noopener noreferrer" className="group bg-[#9AD3FF] font-medium py-2 px-6 rounded-full text-[#002E79] flex items-center justify-center gap-2 w-36">
-            <img src="/images/icons/download.svg" alt="Download" className="w-6 h-6 transition-transform duration-200 group-hover:-translate-x-1" />
-            <span className="transition-all duration-200 group-hover:font-bold">Portfolio</span>
-          </a>
+          <PortfolioDialog />
           </TransitionVertical>
           <TransitionVertical direction="down" duration={1.5}>
           <a
